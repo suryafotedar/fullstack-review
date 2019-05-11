@@ -19,12 +19,13 @@ class Search extends React.Component {
 
   search() {
     this.props.onSearch(this.state.term);
+    document.getElementById('search').value = null;
   }
 
   render() {
     return (<div>
       <h4>Add more repos!</h4>
-      Enter a github username: <input value={this.state.terms} onChange={this.onChange}/>       
+      Enter a github username: <input id='search' value={this.state.terms} onChange={this.onChange}/>       
       <button onClick={this.search}> Add Repos </button>
     </div>) 
   }
